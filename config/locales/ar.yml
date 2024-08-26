@@ -1,0 +1,389 @@
+ar:
+  #############################################################
+  ### WARNING: This is the default rails keys #################
+  ### Changing in any of them will reflect on the whole app ###
+  #############################################################
+  ########################### Active Record Translations ###########################
+  activerecord:
+    models:
+      user: 'المستخدم'
+      user_app_notification: 'إشعار المستخدم'
+      country: 'دولة'
+      notification_template: 'قالب الإشعار'
+      
+    attributes:
+      country:
+        id: 'رقم تعريفي'
+        dial_code: 'رمز الاتصال الهاتفي'
+        name_ar: 'الاسم العربي'
+        name_en: 'الاسم الانجليزي'
+        short_code: 'الرمز القصير'
+      user_app_notification:
+        id: 'رقم تعريفي'
+        recipient_type: 'نوع المستلم'
+        recipient_id: 'المستلم'
+      user:
+        id: 'رقم تعريفي'
+        email: 'البريد الاكتروني'
+        first_name: 'الاسم الأول'
+        last_name: 'الاسم الأخير'
+        image: 'الصورة'
+        phone_number: 'رقم الهاتف'
+        password: 'كلمة مرور'
+      notification_template:
+        id: 'رقم تعريفي'
+        click_action: 'الحدث'
+        action_id: 'رقم الحدث'
+
+    errors:
+      messages:
+        not_found_with_id: "فشل في العثور على %{model} بالتعريف %{id}"
+        not_found: "فشل في العثور على %{model} مع المعلومات المقدمة"
+        record_invalid: 'فشل التحقّق من: %{errors}'
+        restrict_dependent_destroy:
+          has_one: لا يمكن حذف السجل لوجود سجل يعتمد عليه %{record}
+          has_many: لا يمكن حذف السجل لوجود سجلات تعتمد عليه %{record}
+
+
+      models:
+        user:
+          attributes:
+            phone_number: 
+              taken: 'موجود بالفعل'
+              too_long: "طويل جدا الحد الأقصى %{count}"
+            phone_verification_code: 
+              reached_resend_verification_limit: 'آسف ، لقد وصلت إلى الحد الأقصى الخاص بك للاستفسار عن رمز التفعيل لهذا اليوم. ارجوك حاول مرة أخرى غدا'
+              phone_number_already_verified: 'تم التحقق من رقم هاتفك بالفعل'
+              expired: 'انتهت صلاحية رمز التحقق ، يرجى طلب إرسال رمز جديد'
+            email_verification_code:
+              email_already_verified: 'تم التحقق من البريد الإلكتروني بالفعل'
+              expired: 'انتهت صلاحية رمز التحقق ، يرجى طلب إرسال رمز جديد'
+              reached_resend_verification_limit: 'آسف ، لقد وصلت إلى الحد الأقصى الخاص بك للاستفسار عن رمز التفعيل لهذا اليوم. ارجوك حاول مرة أخرى غدا'
+            password:
+              incorrect: 'كلمة المرور غير صحيحة'
+              social_user: 'لا توجد كلمة مرور لحسابات التواصل الاجتماعي'
+            forgot_password_count:
+              limit_reached: 'نأسف لأنك وصلت إلى الحد الأقصى لطلب كلمة مرور مؤقتة لهذا اليوم. ارجوك حاول مرة أخرى غدا'
+            date_of_birth:
+              must_be_in_past: 'يجب أن يكون في الماضي'
+
+  ########################### Validations Translations ###########################
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "يجب أن تقبل"
+      blank: "لا يمكن أن يكون محتوى فارغاً"
+      confirmation: "لا يتوافق مع محتوى %{attribute}"
+      empty: "لا يمكن أن يكون محتوى فارغاً"
+      equal_to: "يجب أن يساوي طول %{count}"
+      even: "يجب أن يكون عدد زوجياً"
+      exclusion: "حقل محجوز"
+      greater_than: "يجب أن يكون عدد أكبر من %{count}"
+      greater_than_or_equal_to: "يجب أن يكون عدد أكبر أو يساوي %{count}"
+      in: "يجب أن يكون في %{count}"
+      inclusion: "غير وارد في القائمة"
+      invalid: "محتوى غير صالح"
+      less_than: "يجب أن يكون عدد أصغر من %{count}"
+      less_than_or_equal_to: "يجب أن يكون عدد أصغر أو يساوي %{count}"
+      model_invalid: "فشل التحقّق من: %{errors}"
+      not_a_number: "يجب أن يكون محتوى رقماً"
+      not_an_integer: "يجب أن يكون عدد عدد صحيحاً"
+      odd: "يجب أن يكون عدد عدداً فردياً"
+      other_than:
+        zero: "طول يجب ألاّ يكون صفر حرف"
+        one: "طول يجب ألاّ يكون حرفاً واحداً"
+        two: "طول يجب ألاّ يكون حرفان"
+        few: "طول يجب ألاّ يكون %{count} أحرف"
+        many: "طول يجب ألاّ يكون %{count} حرفاً"
+        other: "طول يجب ألاّ يكون %{count} حرفاً"
+      present: "يجب ترك حقل فارغاً"
+      required: "يجب أن يكون موجود"
+      taken: "حقل محجوز مسبقاً"
+      too_long:
+        zero: "محتوى أطول من اللّازم (الحد الأقصى هو ولا حرف)"
+        one: "محتوى أطول من اللّازم (الحد الأقصى هو حرف واحد)"
+        two: "محتوى أطول من اللّازم (الحد الأقصى هو حرفان)"
+        few: "محتوى أطول من اللّازم (الحد الأقصى هو %{count} حروف)"
+        many: "محتوى أطول من اللّازم (الحد الأقصى هو %{count} حرف)"
+        other: "محتوى أطول من اللّازم (الحد الأقصى هو %{count} حرف)"
+      too_short:
+        zero: "محتوى أقصر من اللّازم (الحد الأدنى هو ولا حرف)"
+        one: "محتوى أقصر من اللّازم (الحد الأدنى هو حرف واحد)"
+        two: "محتوى أقصر من اللّازم (الحد الأدنى هو حرفان)"
+        few: "محتوى أقصر من اللّازم (الحد الأدنى هو %{count} حروف)"
+        many: "محتوى أقصر من اللّازم (الحد الأدنى هو %{count} حرف)"
+        other: "محتوى أقصر من اللّازم (الحد الأدنى هو %{count} حرف)"
+      wrong_length:
+        zero: "طول غير مطابق للحد المطلوب (يجب أن يكون ولا حرف)"
+        one: "طول غير مطابق للحد المطلوب (يجب أن يكون حرف واحد)"
+        two: "طول غير مطابق للحد المطلوب (يجب أن يكون حرفان)"
+        few: "طول غير مطابق للحد المطلوب (يجب أن يكون %{count} أحرف)"
+        many: "طول غير مطابق للحد المطلوب (يجب أن يكون %{count} حرف)"
+        other: "طول غير مطابق للحد المطلوب (يجب أن يكون %{count} حرف)"
+      template:
+        body: "يُرجى التحقّق من الحقول التّالية:"
+        header:
+          zero: "ليس بالامكان حفظ %{model} لسبب ولا خطأ."
+          one: "ليس بالامكان حفظ %{model} لسبب وجود خطأ واحد."
+          two: "ليس بالامكان حفظ %{model} لسبب وجود خطئان."
+          few: "ليس بالامكان حفظ %{model} لسبب وجود %{count} أخطاء."
+          many: "ليس بالامكان حفظ %{model} لسبب وجود %{count} خطأ."
+          other: "ليس بالامكان حفظ %{model} لسبب وجود %{count} خطأ."
+
+  ########################### General Translations ###########################
+  date:
+    abbr_day_names:
+    - الأحد
+    - الإثنين
+    - الثّلاثاء
+    - الأربعاء
+    - الخميس
+    - الجمعة
+    - السّبت
+    abbr_month_names:
+    -
+    - يناير
+    - فبراير
+    - مارس
+    - أبريل
+    - مايو
+    - يونيو
+    - يوليو
+    - أغسطس
+    - سبتمبر
+    - أكتوبر
+    - نوفمبر
+    - ديسمبر
+    day_names:
+    - الأحد
+    - الإثنين
+    - الثّلاثاء
+    - الأربعاء
+    - الخميس
+    - الجمعة
+    - السّبت
+    formats:
+      default: "%d-%m-%Y"
+      long: "%e %B، %Y"
+      short: "%e %b"
+    month_names:
+    -
+    - يناير
+    - فبراير
+    - مارس
+    - أبريل
+    - مايو
+    - يونيو
+    - يوليو
+    - أغسطس
+    - سبتمبر
+    - أكتوبر
+    - نوفمبر
+    - ديسمبر
+    order:
+    - :day
+    - :month
+    - :year
+
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        zero: حوالي صفر ساعات
+        one: حوالي ساعة واحدة
+        two: حوالي ساعتان
+        few: حوالي %{count} ساعات
+        many: حوالي %{count} ساعة
+        other: حوالي %{count} ساعة
+      about_x_months:
+        zero: حوالي صفر أشهر
+        one: حوالي شهر واحد
+        two: حوالي شهران
+        few: حوالي %{count} أشهر
+        many: حوالي %{count} شهر
+        other: حوالي %{count} شهر
+      about_x_years:
+        zero: حوالي صفر سنوات
+        one: حوالي سنة
+        two: حوالي سنتان
+        few: حوالي %{count} سنوات
+        many: حوالي %{count} سنة
+        other: حوالي %{count} سنة
+      almost_x_years:
+        zero: ما يقرب من صفر سنوات
+        one: تقريبا سنة واحدة
+        two: ما يقرب من سنتين
+        few: ما يقرب من %{count} سنوات
+        many: ما يقرب من %{count} سنة
+        other: ما يقرب من %{count} سنة
+      half_a_minute: نصف دقيقة
+      less_than_x_seconds:
+        zero: أقل من صفر ثواني
+        one: أقل من ثانية
+        two: أقل من ثانيتان
+        few: أقل من %{count} ثوان
+        many: أقل من %{count} ثانية
+        other: أقل من %{count} ثانية
+      less_than_x_minutes:
+        zero: أقل من صفر دقائق
+        one: أقل من دقيقة
+        two: أقل من دقيقتان
+        few: أقل من %{count} دقائق
+        many: أقل من %{count} دقيقة
+        other: أقل من %{count} دقيقة
+      over_x_years:
+        zero: أكثر من صفر سنوات
+        one: أكثر من سنة
+        two: أكثر من سنتين
+        few: أكثر من %{count} سنوات
+        many: أكثر من %{count} سنة
+        other: أكثر من %{count} سنة
+      x_seconds:
+        zero: صفر ثواني
+        one: ثانية واحدة
+        two: ثانيتان
+        few: "%{count} ثوان"
+        many: "%{count} ثانية"
+        other: "%{count} ثانية"
+      x_minutes:
+        zero: صفر دقائق
+        one: دقيقة واحدة
+        two: دقيقتان
+        few: "%{count} دقائق"
+        many: "%{count} دقيقة"
+        other: "%{count} دقيقة"
+      x_days:
+        zero: صفر أيام
+        one: يوم واحد
+        two: يومان
+        few: "%{count} أيام"
+        many: "%{count} يوم"
+        other: "%{count} يوم"
+      x_months:
+        zero: صفر أشهر
+        one: شهر واحد
+        two: شهران
+        few: "%{count} أشهر"
+        many: "%{count} شهر"
+        other: "%{count} شهر"
+    prompts:
+      second: ثانية
+      minute: دقيقة
+      hour: ساعة
+      day: اليوم
+      month: الشهر
+      year: السنة
+
+  time:
+    am: صباحًا
+    formats:
+      default: "%a %d %b %Y %H:%M:%S %Z"
+      long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: مساءً
+
+  helpers:
+    select:
+      prompt: يُرجى الاختيار
+    submit:
+      create: "%{model} إنشاء"
+      submit: "%{model} حِفظ"
+      update: "%{model} تحديث"
+
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u %n"
+        precision: 3
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "KWD"
+    format:
+      delimiter: ","
+      precision: 3
+      round_mode: default
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: مليار
+          million: مليون
+          quadrillion: كدريليون
+          thousand: ألفّ
+          trillion: تريليون
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            zero: Bytes
+            one: Byte
+            two: Bytes
+            few: Bytes
+            many: Bytes
+            other: Bytes
+          eb: EB
+          gb: GB
+          kb: KB
+          mb: MB
+          pb: PB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+
+  support:
+    array:
+      last_word_connector: " و "
+      two_words_connector: " و "
+      words_connector: " ، "
+
+  #######################################
+  ### This is the custom project keys ###
+  ### You can edit any of them ##########
+  #######################################
+  ########################### Specific Translations ###########################
+  authentication:
+    incorrect_password: 'كلمة المرور غير صحيحة'
+    invalid_credentials: 'بيانات دخول غير صحيحة'
+    empty_password: 'كلمة المرور لا ينبغي أن تكون فارغة'
+    account_not_activated: 'الحساب غير مفعل'
+    profile_not_completed: 'الملف الشخصي غير مكتمل'
+    missing_token: 'طلب غير موثوق فيه'
+    suspicious_token: 'طلب غير موثوق فيه'
+    invalid_token: 'طلب غير موثوق فيه'
+    token_expired: 'طلب غير موثوق فيه'
+    too_many_failures: "غير مسموح بالدخول لمدة %{time} دقائق بسبب عدد محاولات الدخول الخاطئة"
+    deactivated: 'تم إيقاف حسابك من قبل المسؤول'
+    blocked_user: 'تم حظر حسابك'
+    deleted_user: 'لقد تم حذف حسابك'
+
+  notifications:
+    temp:
+      title: "هذا %{example} مزيف"
+      body: 'يرجى مسحه'
+
+  
+  # mailer:
+  #   forgot_password:
+  #     subject: '؟ 'هل نسيت كلمة المرور
+  #     notification: '؟ 'هل نسيت كلمة المرور
+  #     body: " لقد تلقينا طلبًا لإعادة تعيين كلمة المرور لحسابك .\n يرجى النقر فوق الارتباط الموجود أدناه لإنشاء كلمة
+  #     مرور جديدة .\n "يرجى ملاحظة أن الرابط تنتهي صلاحيته بعد 15 دقيقة
+  #     link_title: 'إعادة تعيين كلمة المرور'
+
+  countries:
+    invalid_dial_code: "رمز الاتصال غير موجود"

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="format-detection"
+      content="telephone=no, date=no, address=no, email=no"
+    />
+    <title>Activate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .primary_bg {
+        background-color: #e95b25 !important;
+      }
+      .white_txt {
+        color: #fff !important;
+      }
+      @media (max-width: 600px) {
+        .sm-px-24 {
+          padding-left: 24px !important;
+          padding-right: 24px !important;
+        }
+
+        .sm-py-32 {
+          padding-top: 32px !important;
+          padding-bottom: 32px !important;
+        }
+
+        .sm-w-full {
+          width: 100% !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    style="
+      margin: auto;
+      padding-top: 120px;
+      padding-bottom: 120px;
+      width: 100%;
+      word-break: break-word;
+      -webkit-font-smoothing: antialiased;
+      background-color: #023049;
+      font-family: 'Cairo', sans-serif;
+      font-size: 24px;
+      text-align: center;
+      color: #fff;
+      line-height: 34px;
+    "
+    class="sm-py-32"
+    dir="rtl"
+  >
+    <div
+      role="article"
+      aria-roledescription="email"
+      aria-label="Activate your Account"
+      lang="en"
+    >
+      <table
+        style="width: 100%"
+        width="100%"
+        cellpadding="0"
+        cellspacing="0"
+        role="presentation"
+      >
+        <tr>
+          <td align="center">
+            <table
+              class="sm-w-full"
+              width="746"
+              cellpadding="0"
+              cellspacing="0"
+              role="presentation"
+            >
+              <tr>
+                <td class="sm-px-24" align="center"></td>
+              </tr>
+              <tr>
+                <td align="center" class="sm-px-24">
+                  <table
+                    style="width: 100%"
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    role="presentation"
+                  >
+                    <tr>
+                      <td
+                        class="sm-px-24"
+                        style="
+                          background-color: #003857;
+                          border-radius: 4px;
+                          padding-top: 94px;
+                          padding-bottom: 94px;
+                          padding-right: 106px;
+                          padding-left: 107px;
+                        "
+                        align="center"
+                      >
+                        <div style="width: 50%">
+                          <img
+                          src="https://techne-staging-uploads.s3.amazonaws.com/trianglz_spon_logo.png"
+                          alt="logo"
+                          width="100%" />
+                        </div>
+                        <p
+                          style="
+                            font-weight: 700;
+                            margin-bottom: 63px;
+                            margin-top: 30px;
+                          "
+                        >
+                            <%= t("mailer.#{@template}.notification", locale: @user.locale) %><br>
+                        </p>
+                        <p><%= t("mailer.#{@template}.body", locale: @user.locale, **@opts) %></p>
+                        <table
+                          style="width: 100%"
+                          cellpadding="0"
+                          cellspacing="0"
+                          role="presentation"
+                        >
+                          <tr>
+                            <td
+                              style="border-radius: 8px; text-align: center"
+                              class="primary_bg"
+                            >
+                              <% if @link.present? %>
+                                <a
+                                  href=<%="#{@link}"%>
+                                  target="_blank"
+                                  style="
+                                    display: block;
+                                    font-weight: 700;
+                                    padding: 18px;
+                                    text-decoration: none;
+                                  "
+                                  class="white_txt"
+                                  ><%= t("mailer.#{@template}.link_title", locale: @user.locale) %></a
+                                >
+                              <% end %>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

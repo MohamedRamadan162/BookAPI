@@ -1,0 +1,51 @@
+version: '3'
+services:
+  db:
+    image: postgis/postgis:14-3.3
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    env_file:
+      - '.env'
+
+  redis_db:
+    image: "redis:4.0-alpine"
+    command: redis-server
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_db:/data
+
+  web:
+    depends_on:
+      - db
+      - worker
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    ports:
+      - "3000:3000"
+    links:
+      - db
+    volumes:
+      - .:/myapp
+    env_file:
+      - '.env'
+    stdin_open: true
+    tty: true
+
+  worker:
+    depends_on:
+      - db
+      - redis_db
+    build: .
+    environment:
+      IS_WORKER: 1
+    volumes:
+      - .:/myapp
+    env_file:
+      - '.env'
+
+volumes:
+  redis_db:
+  db:
