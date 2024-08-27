@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  get 'books/', to: 'books#index'
-  get 'books/:id', to: 'books#show'
-  post 'books/' , to: 'books#create'
-  patch 'books/:id', to: 'books#update'
-  delete 'books/:id', to: 'books#destroy'
+
   
   get 'sessions/new'
   # Put your routes here
@@ -25,6 +21,7 @@ Rails.application.routes.draw do
   mount Rswag::Ui::Engine => 'api-docs'
   mount Rswag::Api::Engine => 'api-docs'
 
+  resources :books
   resources :users, only: %i[show]
   resources :users do
     collection do
