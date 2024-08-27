@@ -37,6 +37,8 @@ gem 'jwt'
 gem 'awesome_print'
 # serializer
 gem 'jsonapi-serializer'
+gem 'active_model_serializers'
+
 # fastest pagination
 gem 'pagy'
 # policies
@@ -81,6 +83,7 @@ gem 'apple_id'
 gem 'google-id-token'
 gem 'httparty'
 gem 'simple_command'
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

@@ -9,9 +9,13 @@ class ApplicationController < ActionController::API
   include ActionController::MimeResponds
   include SessionsHelper
   def authenticate_request
-    @current_user = AuthorizeApiRequest.new(headers:
-    request.headers).call
+    @current_user = AuthorizeApiRequest.new(headers:request.headers).call
   end
+
+  def current_user
+    @current_user
+  end
+
 
   # before_action :validate_session
   # skip_before_action :validate_session, only: %i[create]

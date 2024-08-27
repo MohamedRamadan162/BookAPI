@@ -20,4 +20,7 @@ class BookPolicy < ApplicationPolicy
   def destroy?
     user.admin?
   end 
+  def policy_error_message
+    'You are not authorized to perform this action'
+  end
 end

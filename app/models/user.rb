@@ -62,9 +62,7 @@ class User < ApplicationRecord
     self.is_forgot_password_code_used = true
     save!
   end
-  def admin?
-    user.admin? == true
-  end
+  
 end
 
 # == Schema Information

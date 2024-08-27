@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'books/', to: 'books#list'
+  get 'books/', to: 'books#index'
   get 'books/:id', to: 'books#show'
   post 'books/' , to: 'books#create'
   patch 'books/:id', to: 'books#update'
   delete 'books/:id', to: 'books#destroy'
+  
   get 'sessions/new'
   # Put your routes here
   root to: 'health_check#index'
